@@ -13,7 +13,10 @@
   "author": "Artem Kuzko <a.kuzko@gmail.com> (https://github.com/akuzko)",
   "license": "MIT",
   "dependencies": {
-    "react-form-base": "*"
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-form-base": "../react-form-base",
+    "react-tap-event-plugin": "^2.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
@@ -21,7 +24,6 @@
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-1": "^6.16.0",
-    "material-ui": "^0.16.1",
-    "react": "^15.3.2"
+    "material-ui": "^0.16.6"
   }
 }

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import FlatButton from 'material-ui';
+import FlatButton from 'material-ui/FlatButton';
 import Form from 'react-form-base';
 
 export default class DialogForm extends Form {
