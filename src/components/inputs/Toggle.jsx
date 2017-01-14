@@ -1,20 +1,20 @@
 import React, { PropTypes, Component } from 'react';
-import MaterialCheckbox from 'material-ui/Checkbox';
+import MaterialToggle from 'material-ui/Toggle';
 
-export default function Checkbox(props) {
+export default function Toggle(props) {
   const { value, error, onChange, ...rest } = props;
-  const checked = Boolean(value);
+  const toggled = Boolean(value);
 
   return (
-    <MaterialCheckbox
-      checked={checked}
-      onCheck={(e, value) => onChange(value, e)}
+    <MaterialToggle
+      toggled={toggled}
+      onToggle={(e, value) => onChange(value, e)}
       {...rest}
     />
   );
 }
 
-Checkbox.propTypes = {
+Toggle.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   error: PropTypes.string,
   onChange: PropTypes.func

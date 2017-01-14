@@ -1,31 +1,26 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
 import MaterialDatePicker from 'material-ui/DatePicker';
 
-export default class DatePicker extends Component {
-  static propTypes = {
-    error: PropTypes.string,
-    errorClassName: PropTypes.string,
-    onChange: PropTypes.func
-  };
+export default function DatePicker(props) {
+  const { value, error, errorClassName, onChange, ...rest } = props;
+  const pickerValue = value ? value : null;
 
-  static defaultProps = {
-    errorClassName: 'error'
-  };
-
-  onChange = (e, value) => {
-    this.props.onChange(value, e);
-  };
-
-  render() {
-    const { error, errorClassName, onChange, ...rest } = this.props;
-
-    return (
-      <div>
-        <MaterialDatePicker onChange={this.onChange} {...this.props} />
-        {error &&
-          <div className={errorClassName}>{error}</div>
-        }
-      </div>
-    );
-  }
+  return (
+    <div>
+      <MaterialDatePicker value={pickerValue} onChange={(e, value) => onChange(value, e)} {...rest} />
+      {error &&
+        <div className={errorClassName}>{error}</div>
+      }
+    </div>
+  );
 }
+
+DatePicker.propTypes = {
+  error: PropTypes.string,
+  errorClassName: PropTypes.string,
+  onChange: PropTypes.func
+};
+
+DatePicker.defaultProps = {
+  errorClassName: 'error'
+};
