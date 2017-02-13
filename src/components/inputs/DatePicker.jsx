@@ -2,11 +2,11 @@ import React, { PropTypes } from 'react';
 import MaterialDatePicker from 'material-ui/DatePicker';
 
 export default function DatePicker(props) {
-  const { value, error, errorClassName, onChange, ...rest } = props;
-  const pickerValue = value ? value : null;
+  const { value, error, wrapperClassName, errorClassName, onChange, ...rest } = props;
+  const pickerValue = value || null;
 
   return (
-    <div>
+    <div className={wrapperClassName}>
       <MaterialDatePicker value={pickerValue} onChange={(e, value) => onChange(value, e)} {...rest} />
       {error &&
         <div className={errorClassName}>{error}</div>
@@ -17,6 +17,7 @@ export default function DatePicker(props) {
 
 DatePicker.propTypes = {
   error: PropTypes.string,
+  wrapperClassName: PropTypes.string,
   errorClassName: PropTypes.string,
   onChange: PropTypes.func
 };

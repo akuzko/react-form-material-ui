@@ -2,10 +2,10 @@ import React, { PropTypes, Component } from 'react';
 import MaterialSlider from 'material-ui/Slider';
 
 export default function Slider(props) {
-  const { value, error, onChange, inputClassName, errorClassName, ...rest } = props;
+  const { value, error, onChange, wrapperClassName, errorClassName, ...rest } = props;
 
   return (
-    <div className={inputClassName}>
+    <div className={wrapperClassName}>
       <MaterialSlider
         value={+value}
         onChange={(e, value) => onChange(value, e)}
@@ -23,7 +23,7 @@ Slider.propTypes = {
   error: PropTypes.string,
   onChange: PropTypes.func,
   errorClassName: PropTypes.string,
-  inputClassName: PropTypes.string
+  wrapperClassName: PropTypes.string
 };
 
 Slider.defaultProps = {

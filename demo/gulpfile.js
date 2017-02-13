@@ -6,7 +6,16 @@ var gulp = require('gulp'),
   source = require('vinyl-source-stream'),
   notify = require('gulp-notify'),
   connect = require('gulp-connect'),
-  prettyHrtime = require('pretty-hrtime');
+  prettyHrtime = require('pretty-hrtime'),
+
+  postcss = require('gulp-postcss'),
+  cssImport = require('postcss-import'),
+  discard = require('postcss-discard-comments'),
+  mixins = require('postcss-mixins'),
+  nested = require('postcss-nested'),
+  simpleVars = require('postcss-simple-vars'),
+  colorFunction = require('postcss-color-function'),
+  autoprefixer = require('autoprefixer');
 
 var startTime;
 
@@ -49,7 +58,26 @@ gulp.task('browserify', function () {
   }
 });
 
-gulp.task('default', ['browserify', 'server']);
+gulp.task('css', function() {
+  var processors = [
+    cssImport({ path: ['./src/styles'] }),
+    discard,
+    mixins,
+    nested,
+    simpleVars,
+    colorFunction,
+    autoprefixer({ browsers: ['last 2 version'] })
+  ];
+
+  return gulp.src('./src/styles/demo.css')
+    .pipe(postcss(processors))
+    .on('error', handleError)
+    .pipe(gulp.dest('./dist'))
+    .pipe(connect.reload());
+});
+
+gulp.task('default', ['css', 'browserify', 'server']);
+gulp.watch('./src/styles/*.css', ['css']);
 
 function handleError(err) {
   var args = Array.prototype.slice.call(arguments);

@@ -4,17 +4,23 @@ import DemoForm from './DemoForm';
 
 export default class App extends Component {
   state = {
-    form: {}
+    form: {
+      user: {}
+    }
   };
 
   render() {
     return (
       <MuiThemeProvider>
-        <DemoForm
-          attrs={this.state.form}
-          onChange={(form) => this.setState({ form })}
-          validateOnChange
-        />
+        <div className="container">
+          <div className="mt-20 mb-20">
+            <DemoForm
+              attrs={this.state.form}
+              onChange={(form) => this.setState({ form })}
+              validateOnChange
+            />
+          </div>
+        </div>
       </MuiThemeProvider>
     );
   }

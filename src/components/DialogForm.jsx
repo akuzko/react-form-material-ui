@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import Form from 'react-form-base';
 
@@ -13,9 +14,11 @@ export default class DialogForm extends Form {
   };
 
   static defaultProps = {
+    ...Form.defaultProps,
     title: '',
     saveLabel: 'Save',
-    closeLabel: 'Cancel'
+    closeLabel: 'Cancel',
+    open: false,
   };
 
   getTitle() {
@@ -29,6 +32,10 @@ export default class DialogForm extends Form {
       <FlatButton label={closeLabel} onTouchTap={onRequestClose} />,
       <FlatButton label={saveLabel} primary onTouchTap={() => this.save()} />
     ];
+  }
+
+  save() {
+    return this.ifValid(() => super.save());
   }
 
   render() {
