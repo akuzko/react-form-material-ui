@@ -19,7 +19,7 @@
   "author": "Artem Kuzko <a.kuzko@gmail.com> (https://github.com/akuzko)",
   "license": "MIT",
   "dependencies": {
-    "react-form-base": "../react-form-base"
+    "react-form-base": "^1.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",

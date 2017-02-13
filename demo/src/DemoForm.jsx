@@ -8,7 +8,7 @@ import Form, {
   Slider,
   Checkbox,
   Toggle,
-} from 'react-form-material-ui';
+} from '../../src';
 import MenuItem from 'material-ui/MenuItem';
 import { RadioButton } from 'material-ui/RadioButton';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -75,7 +75,7 @@ export default class DemoForm extends Form {
         <hr />
 
         <div>
-          <RadioButtonGroup {...this.$('color5')} name="color5">
+          <RadioButtonGroup {...this.$('color5')}>
             <RadioButton value="Red" label="Red" />
             <RadioButton value="Green" label="Green" />
             <RadioButton value="Blue" label="Blue" />

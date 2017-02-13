@@ -2,13 +2,6 @@
   "name": "react-form-material-ui-demo",
   "author": "Artem Kuzko <a.kuzko@gmail.com> (https://github.com/akuzko)",
   "license": "MIT",
-  "dependencies": {
-    "material-ui": "^0.16.1",
-    "react": "^15.3.2",
-    "react-dom": "^15.4.1",
-    "react-tap-event-plugin": "^2.0.1",
-    "react-form-material-ui": "file:../"
-  },
   "devDependencies": {
     "babel-cli": "^6.16.0",
     "babel-core": "^6.17.0",

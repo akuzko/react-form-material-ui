@@ -6,7 +6,7 @@ export default function TextField(props) {
 
   return (
     <MaterialTextField
-      value={value}
+      value={value || ''}
       onChange={(e) => onChange(e.target.value, e)}
       errorText={error}
       {...rest}
@@ -15,7 +15,7 @@ export default function TextField(props) {
 }
 
 TextField.propTypes = {
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   error: PropTypes.string,
   onChange: PropTypes.func
 };

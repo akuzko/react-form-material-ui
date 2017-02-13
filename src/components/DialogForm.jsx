@@ -6,18 +6,20 @@ export default class DialogForm extends Form {
   static propTypes = {
     ...Form.propTypes,
     open: PropTypes.bool,
+    title: PropTypes.string,
     saveLabel: PropTypes.string,
     closeLabel: PropTypes.string,
     onRequestClose: PropTypes.func
   };
 
   static defaultProps = {
+    title: '',
     saveLabel: 'Save',
     closeLabel: 'Cancel'
   };
 
   getTitle() {
-    return '';
+    return this.props.title;
   }
 
   getActions() {
@@ -29,14 +31,14 @@ export default class DialogForm extends Form {
     ];
   }
 
-  render(content) {
+  render() {
     return (
       <Dialog
         title={this.getTitle()}
         actions={this.getActions()}
         open={this.props.open}
       >
-        {content}
+        {super.render()}
       </Dialog>
     );
   }
