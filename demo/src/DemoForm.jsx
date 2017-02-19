@@ -94,15 +94,26 @@ export default class DemoForm extends Form {
                 `}
               />
               <Source code={`
-                <DemoDialogForm
-                  {...$.nested('dialog')}
-                  title="Nested Dialog Form"
-                  open={this.state.open}
-                  onRequestClose={() => this.setState({ open: false })}
-                  onRequestSave={() => this.setState({ open: false })}
-                  validateOnChange
-                />
-                <RaisedButton label="Open Dialog Form" onTouchTap={() => this.setState({ open: true })} />
+                import DemoDialogForm from './DemoDialogForm';
+
+                class DemoForm extends Form {
+                  // ...
+                  $render($) {
+                    return (
+                      <div>
+                        <DemoDialogForm
+                          {...$.nested('dialog')}
+                          title="Nested Dialog Form"
+                          open={this.state.open}
+                          onRequestClose={() => this.setState({ open: false })}
+                          onRequestSave={() => this.setState({ open: false })}
+                          validateOnChange
+                        />
+                        <RaisedButton label="Open Dialog Form" onTouchTap={() => this.setState({ open: true })} />
+                        {/* other components */}
+                      </div>
+                    );
+                  }
                 `}
               />
             </div>
@@ -220,12 +231,12 @@ export default class DemoForm extends Form {
               <Source code={`
                 const colors = ['Purple', 'Black', 'White'];
 
-                <RadioButtonGroup {...$('color4')} options={colors} name="color4" />
+                <RadioButtonGroup {...$('color4')} className="mb-20" options={colors} name="color4" />
               `} />
             </div>
             <div className="flex-item">
               <h4 className="mb-20">RadioButtonGroup, options via props</h4>
-              <RadioButtonGroup className="mb-20" {...$('color4')} options={colors.slice(5)} name="color4" />
+              <RadioButtonGroup {...$('color4')} className="mb-20" options={colors.slice(5)} name="color4" />
               <RaisedButton label="Validate" onTouchTap={this.makeInvalid.bind(this, 'color4')} />
             </div>
           </div>
@@ -233,7 +244,7 @@ export default class DemoForm extends Form {
           <div className="paper horizontal-container center p-20 mb-20">
             <div className="flex-item two mr-20">
               <Source code={`
-                <RadioButtonGroup {...$('color5')}>
+                <RadioButtonGroup {...$('color5')} className="mb-20">
                   <RadioButton value="Purple" label="Purple" />
                   <RadioButton value="Black" label="Black" />
                   <RadioButton value="White" label="White" />
@@ -242,7 +253,7 @@ export default class DemoForm extends Form {
             </div>
             <div className="flex-item">
               <h4 className="mb-20">RadioButtonGroup, options via children</h4>
-              <RadioButtonGroup className="mb-20" {...$('color5')}>
+              <RadioButtonGroup {...$('color5')} className="mb-20">
                 <RadioButton value="Purple" label="Purple" />
                 <RadioButton value="Black" label="Black" />
                 <RadioButton value="White" label="White" />
@@ -264,22 +275,22 @@ export default class DemoForm extends Form {
 
           <div className="paper horizontal-container center p-20 mb-20">
             <div className="flex-item two mr-20">
-              <Source code={`<Checkbox {...$('checkbox')} label="Checkbox" />`} />
+              <Source code={`<Checkbox {...$('checkbox')} className="mb-20" label="Checkbox" />`} />
             </div>
             <div className="flex-item">
               <h4 className="mb-20">Checkbox</h4>
-              <Checkbox className="mb-20" {...$('checkbox')} label="Checkbox" />
+              <Checkbox {...$('checkbox')} className="mb-20" label="Checkbox" />
               <RaisedButton label="Validate" onTouchTap={this.makeInvalid.bind(this, 'checkbox')} />
             </div>
           </div>
 
           <div className="paper horizontal-container center p-20 mb-20">
             <div className="flex-item two mr-20">
-              <Source code={`<Toggle {...$('toggle')} label="Toggle" />`} />
+              <Source code={`<Toggle {...$('toggle')} className="mb-20" label="Toggle" />`} />
             </div>
             <div className="flex-item">
               <h4 className="mb-20">Toggle</h4>
-              <Toggle className="mb-20" {...$('toggle')} label="Toggle" />
+              <Toggle {...$('toggle')} className="mb-20" label="Toggle" />
               <RaisedButton label="Validate" onTouchTap={this.makeInvalid.bind(this, 'toggle')} />
             </div>
           </div>

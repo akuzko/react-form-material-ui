@@ -19,6 +19,13 @@
     "lib",
     "src"
   ],
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-components",
+    "form",
+    "material-ui"
+  ],
   "author": "Artem Kuzko <a.kuzko@gmail.com> (https://github.com/akuzko)",
   "license": "MIT",
   "dependencies": {
