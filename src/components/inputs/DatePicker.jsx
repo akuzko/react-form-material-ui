@@ -16,6 +16,7 @@ export default function DatePicker(props) {
 }
 
 DatePicker.propTypes = {
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   error: PropTypes.string,
   wrapperClassName: PropTypes.string,
   errorClassName: PropTypes.string,

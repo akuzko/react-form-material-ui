@@ -7,7 +7,7 @@ import Form, {
   RadioButtonGroup,
   Slider,
   Checkbox,
-  Toggle,
+  Toggle
 } from '../../src';
 import DemoDialogForm from './DemoDialogForm';
 import MenuItem from 'material-ui/MenuItem';
@@ -22,7 +22,7 @@ const colors = [
   'Blue',
   'Purple',
   'Black',
-  'White',
+  'White'
 ];
 
 export default class DemoForm extends Form {
@@ -35,7 +35,9 @@ export default class DemoForm extends Form {
       <div className="horizontal-container">
         <div className="flex-item mr-20">
           <div className="paper horizontal-container center p-20 mb-20">
-            <div className="flex-item two mr-20"></div>
+            <div className="flex-item two mr-20">
+              DialogForm Source Example
+            </div>
             <div className="flex-item">
               <DemoDialogForm
                 {...$.nested('user')}
@@ -52,7 +54,9 @@ export default class DemoForm extends Form {
           </div>
 
           <div className="paper horizontal-container center p-20 mb-20">
-            <div className="flex-item two mr-20"></div>
+            <div className="flex-item two mr-20">
+              TextField Source Example
+            </div>
             <div className="flex-item">
               <TextField {...$('email')} floatingLabelText="Email" />
               <div>
@@ -62,7 +66,9 @@ export default class DemoForm extends Form {
           </div>
 
           <div className="paper horizontal-container center p-20 mb-20">
-            <div className="flex-item two mr-20"></div>
+            <div className="flex-item two mr-20">
+              AutoComplete Source Example
+            </div>
             <div className="flex-item">
               <AutoComplete
                 {...$('color1')}
@@ -78,7 +84,9 @@ export default class DemoForm extends Form {
           </div>
 
           <div className="paper horizontal-container center p-20 mb-20">
-            <div className="flex-item two mr-20"></div>
+            <div className="flex-item two mr-20">
+              DatePicker Source Example
+            </div>
             <div className="flex-item">
               <DatePicker {...$('startDate')} hintText="Start Date" />
               <RaisedButton label="Validate" onTouchTap={this.makeInvalid.bind(this, 'startDate')} />
@@ -86,7 +94,9 @@ export default class DemoForm extends Form {
           </div>
 
           <div className="paper horizontal-container center p-20 mb-20">
-            <div className="flex-item two mr-20"></div>
+            <div className="flex-item two mr-20">
+              SelectField Source Example
+            </div>
             <div className="flex-item">
               <SelectField {...$('color2')} options={colors} floatingLabelText="Color (Green)" />
               <div>
@@ -96,7 +106,9 @@ export default class DemoForm extends Form {
           </div>
 
           <div className="paper horizontal-container center p-20 mb-20">
-            <div className="flex-item two mr-20"></div>
+            <div className="flex-item two mr-20">
+              SelectField Source Example
+            </div>
             <div className="flex-item">
               <SelectField {...$('color3')} floatingLabelText="Color (Blue)">
                 <MenuItem value="Red" primaryText="Red" />
@@ -110,7 +122,9 @@ export default class DemoForm extends Form {
           </div>
 
           <div className="paper horizontal-container center p-20 mb-20">
-            <div className="flex-item two mr-20"></div>
+            <div className="flex-item two mr-20">
+              RadioButtonGroup Source Example
+            </div>
             <div className="flex-item">
               <RadioButtonGroup {...$('color4')} options={colors.slice(5)} name="color4" />
               <RaisedButton label="Validate" onTouchTap={this.makeInvalid.bind(this, 'color4')} />
@@ -118,7 +132,9 @@ export default class DemoForm extends Form {
           </div>
 
           <div className="paper horizontal-container center p-20 mb-20">
-            <div className="flex-item two mr-20"></div>
+            <div className="flex-item two mr-20">
+              RadioButtonGroup Source Example
+            </div>
             <div className="flex-item">
               <RadioButtonGroup {...$('color5')}>
                 <RadioButton value="Red" label="Red" />
@@ -130,7 +146,9 @@ export default class DemoForm extends Form {
           </div>
 
           <div className="paper horizontal-container center p-20 mb-20">
-            <div className="flex-item two mr-20"></div>
+            <div className="flex-item two mr-20">
+              Slider Source Example
+            </div>
             <div className="flex-item">
               <Slider {...$('slider')} />
               <RaisedButton label="Validate" onTouchTap={this.makeInvalid.bind(this, 'slider')} />
@@ -138,7 +156,9 @@ export default class DemoForm extends Form {
           </div>
 
           <div className="paper horizontal-container center p-20 mb-20">
-            <div className="flex-item two mr-20"></div>
+            <div className="flex-item two mr-20">
+              Checkbox Source Example
+            </div>
             <div className="flex-item">
               <Checkbox {...$('checkbox')} label="Checkbox" />
               <RaisedButton label="Validate" onTouchTap={this.makeInvalid.bind(this, 'checkbox')} />
@@ -146,7 +166,9 @@ export default class DemoForm extends Form {
           </div>
 
           <div className="paper horizontal-container center p-20 mb-20">
-            <div className="flex-item two mr-20"></div>
+            <div className="flex-item two mr-20">
+              Toggle Source Example
+            </div>
             <div className="flex-item">
               <Toggle {...$('toggle')} label="Toggle" />
               <RaisedButton label="Validate" onTouchTap={this.makeInvalid.bind(this, 'toggle')} />

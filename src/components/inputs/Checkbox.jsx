@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
 import MaterialCheckbox from 'material-ui/Checkbox';
 
 export default function Checkbox(props) {
@@ -13,7 +13,7 @@ export default function Checkbox(props) {
         {...rest}
       />
       {error &&
-        <div classname={errorClassName}>{error}</div>
+        <div className={errorClassName}>{error}</div>
       }
     </div>
   );

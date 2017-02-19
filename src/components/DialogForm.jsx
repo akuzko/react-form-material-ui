@@ -18,7 +18,7 @@ export default class DialogForm extends Form {
     title: '',
     saveLabel: 'Save',
     closeLabel: 'Cancel',
-    open: false,
+    open: false
   };
 
   getTitle() {
@@ -26,9 +26,9 @@ export default class DialogForm extends Form {
   }
 
   getActions() {
-    const { saveLabel, closeLabel, onRequestClose } = this.props;
+    const { actions, saveLabel, closeLabel, onRequestClose } = this.props;
 
-    return [
+    return actions || [
       <FlatButton label={closeLabel} onTouchTap={onRequestClose} />,
       <FlatButton label={saveLabel} primary onTouchTap={() => this.save()} />
     ];
@@ -41,9 +41,9 @@ export default class DialogForm extends Form {
   render() {
     return (
       <Dialog
+        {...this.props}
         title={this.getTitle()}
         actions={this.getActions()}
-        open={this.props.open}
       >
         {super.render()}
       </Dialog>

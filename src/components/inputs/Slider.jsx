@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
 import MaterialSlider from 'material-ui/Slider';
 
 export default function Slider(props) {
