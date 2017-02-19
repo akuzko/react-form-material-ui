@@ -16,6 +16,12 @@ body {
   padding: 0 15px;
 }
 
+h4 {
+  font-size: 20px;
+  font-family: monospace;
+  font-weight: normal;
+}
+
 .relative {
   position: relative;
 }
@@ -36,5 +42,28 @@ body {
     position: fixed;
     width: 360px;
     overflow-y: auto;
+  }
+}
+
+.source-panel {
+  line-height: 1;
+  height: 30px;
+  background: #3a539b;
+  color: #fff;
+  cursor: pointer;
+  padding: 0 15px;
+
+  .code-icon {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+  }
+}
+
+.source-code {
+  pre[class*="language-"] {
+    margin: 0;
+    max-height: 400px;
+    overflow: auto;
   }
 }
