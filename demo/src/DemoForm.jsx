@@ -107,7 +107,7 @@ export default class DemoForm extends Form {
               />
             </div>
             <div className="flex-item">
-              <h4>DialogForm</h4>
+              <h4 className="mb-20">DialogForm</h4>
               <DemoDialogForm
                 {...$.nested('dialog')}
                 title="Nested Dialog Form"
@@ -224,8 +224,8 @@ export default class DemoForm extends Form {
               `} />
             </div>
             <div className="flex-item">
-              <h4>RadioButtonGroup, options via props</h4>
-              <RadioButtonGroup {...$('color4')} options={colors.slice(5)} name="color4" />
+              <h4 className="mb-20">RadioButtonGroup, options via props</h4>
+              <RadioButtonGroup className="mb-20" {...$('color4')} options={colors.slice(5)} name="color4" />
               <RaisedButton label="Validate" onTouchTap={this.makeInvalid.bind(this, 'color4')} />
             </div>
           </div>
@@ -241,8 +241,8 @@ export default class DemoForm extends Form {
               `} />
             </div>
             <div className="flex-item">
-              <h4>RadioButtonGroup, options via children</h4>
-              <RadioButtonGroup {...$('color5')}>
+              <h4 className="mb-20">RadioButtonGroup, options via children</h4>
+              <RadioButtonGroup className="mb-20" {...$('color5')}>
                 <RadioButton value="Purple" label="Purple" />
                 <RadioButton value="Black" label="Black" />
                 <RadioButton value="White" label="White" />
@@ -267,8 +267,8 @@ export default class DemoForm extends Form {
               <Source code={`<Checkbox {...$('checkbox')} label="Checkbox" />`} />
             </div>
             <div className="flex-item">
-              <h4>Checkbox</h4>
-              <Checkbox {...$('checkbox')} label="Checkbox" />
+              <h4 className="mb-20">Checkbox</h4>
+              <Checkbox className="mb-20" {...$('checkbox')} label="Checkbox" />
               <RaisedButton label="Validate" onTouchTap={this.makeInvalid.bind(this, 'checkbox')} />
             </div>
           </div>
@@ -278,8 +278,8 @@ export default class DemoForm extends Form {
               <Source code={`<Toggle {...$('toggle')} label="Toggle" />`} />
             </div>
             <div className="flex-item">
-              <h4>Toggle</h4>
-              <Toggle {...$('toggle')} label="Toggle" />
+              <h4 className="mb-20">Toggle</h4>
+              <Toggle className="mb-20" {...$('toggle')} label="Toggle" />
               <RaisedButton label="Validate" onTouchTap={this.makeInvalid.bind(this, 'toggle')} />
             </div>
           </div>
