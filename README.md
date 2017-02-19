@@ -27,7 +27,7 @@ import Form, {
   Slider,
   RadioButtonGroup,
   RadioButton
-} from 'react-form-js';
+} from 'react-form-material-ui';
 
 const colors = [
   'Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Black', 'White'
@@ -65,7 +65,7 @@ export default class MyForm extends Form {
 import { DialogForm, TextField } from 'react-form-material-ui';
 import FlatButton from 'material-ui/FlatButton';
 
-export default class MyDialogForm extends DialogForm() {
+export default class MyDialogForm extends DialogForm {
   // title may be passed in props, or can be rendered dynamically (based on
   // form's attrs, for example) via getTitle method:
   getTitle() {
@@ -126,7 +126,7 @@ without overloading this method.
     </tr>
     <tr>
       <td>saveLabel</td>
-      <td><code>PropTypes.string</code>Defaults to <code>'Save'</code></td>
+      <td><code>PropTypes.string</code>. Defaults to <code>'Save'</code></td>
       <td>
         label for 'save' primary action button that is one of 2 buttons that
         DialogForm generates by default.
@@ -134,7 +134,7 @@ without overloading this method.
     </tr>
     <tr>
       <td>cancelLabel</td>
-      <td><code>PropTypes.string</code>Defaults to <code>'Cancel'</code></td>
+      <td><code>PropTypes.string</code>. Defaults to <code>'Cancel'</code></td>
       <td>
         label for 'cancel' action button that is one of 2 buttons that
         DialogForm generates by default.
@@ -185,8 +185,8 @@ This component is a simple wrapper around `material-ui`'s `TextField` component.
       </td>
     </tr>
     <tr>
-      <td>errorClassname</td>
-      <td><code>PropTypes.string</code>Defaults to <code>'error'</code></td>
+      <td>errorClassName</td>
+      <td><code>PropTypes.string</code>. Defaults to <code>'error'</code></td>
       <td>className for internal error element (div), which is rendered if error is present.</td>
     </tr>
     <tr>
@@ -313,8 +313,8 @@ and appropriate <code>onUpdateInput</code> prop is generated to match form's
       </td>
     </tr>
     <tr>
-      <td>errorClassname</td>
-      <td><code>PropTypes.string</code>Defaults to <code>'error'</code></td>
+      <td>errorClassName</td>
+      <td><code>PropTypes.string</code>. Defaults to <code>'error'</code></td>
       <td>className for internal error element (div), which is rendered if error is present.</td>
     </tr>
     <tr>
@@ -343,8 +343,8 @@ and appropriate <code>onUpdateInput</code> prop is generated to match form's
       </td>
     </tr>
     <tr>
-      <td>errorClassname</td>
-      <td><code>PropTypes.string</code>Defaults to <code>'error'</code></td>
+      <td>errorClassName</td>
+      <td><code>PropTypes.string</code>. Defaults to <code>'error'</code></td>
       <td>className for internal error element (div), which is rendered if error is present.</td>
     </tr>
     <tr>
@@ -373,8 +373,8 @@ and appropriate <code>onUpdateInput</code> prop is generated to match form's
       </td>
     </tr>
     <tr>
-      <td>errorClassname</td>
-      <td><code>PropTypes.string</code>Defaults to <code>'error'</code></td>
+      <td>errorClassName</td>
+      <td><code>PropTypes.string</code>. Defaults to <code>'error'</code></td>
       <td>className for internal error element (div), which is rendered if error is present.</td>
     </tr>
     <tr>
@@ -403,8 +403,8 @@ and appropriate <code>onUpdateInput</code> prop is generated to match form's
       </td>
     </tr>
     <tr>
-      <td>errorClassname</td>
-      <td><code>PropTypes.string</code>Defaults to <code>'error'</code></td>
+      <td>errorClassName</td>
+      <td><code>PropTypes.string</code>. Defaults to <code>'error'</code></td>
       <td>className for internal error element (div), which is rendered if error is present.</td>
     </tr>
     <tr>
