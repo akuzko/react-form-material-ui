@@ -139,7 +139,6 @@ textarea {
 }
 
 .error {
-  position: absolute;
   font-size: 14px;
   color: #db0a5b;
 }
