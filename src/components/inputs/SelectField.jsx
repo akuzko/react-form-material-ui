@@ -31,8 +31,12 @@ SelectField.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.oneOfType([
       PropTypes.string,
+      PropTypes.number,
       PropTypes.shape({
-        value: PropTypes.string,
+        value: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number,
+        ]),
         text: PropTypes.string
       })
     ])

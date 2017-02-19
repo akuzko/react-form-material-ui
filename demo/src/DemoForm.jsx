@@ -137,11 +137,11 @@ export default class DemoForm extends Form {
 
           <div className="paper horizontal-container center p-20 mb-20">
             <div className="flex-item two mr-20">
-              <Source code={`<DatePicker {...$('birthDate')} hintText="Start Date" />`} />
+              <Source code={`<DatePicker {...$('birthDate')} hintText="Birth Date" />`} />
             </div>
             <div className="flex-item">
               <h4>DatePicker</h4>
-              <DatePicker {...$('birthDate')} hintText="Start Date" />
+              <DatePicker {...$('birthDate')} hintText="Birth Date" />
               <RaisedButton label="Validate" onTouchTap={this.makeInvalid.bind(this, 'birthDate')} />
             </div>
           </div>
@@ -241,7 +241,7 @@ export default class DemoForm extends Form {
               `} />
             </div>
             <div className="flex-item">
-              <h4>SelectField, options via children</h4>
+              <h4>RadioButtonGroup, options via children</h4>
               <RadioButtonGroup {...$('color5')}>
                 <RadioButton value="Purple" label="Purple" />
                 <RadioButton value="Black" label="Black" />

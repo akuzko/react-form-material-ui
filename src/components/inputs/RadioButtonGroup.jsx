@@ -5,9 +5,9 @@ export default function RadioButtonGroup(props) {
   const { value, error, onChange, wrapperClassName, errorClassName, options, children, ...rest } = props;
 
   const radioItems = children || (options || []).map((opt, i) => {
-    const { value, text } = typeof opt === 'string' ? { value: opt, text: opt } : opt;
+    const { value, label } = typeof opt === 'string' ? { value: opt, label: opt } : opt;
 
-    return <RadioButton key={i} value={value} label={text} />;
+    return <RadioButton key={i} value={value} label={label} />;
   });
 
 
@@ -34,9 +34,13 @@ RadioButtonGroup.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.oneOfType([
       PropTypes.string,
+      PropTypes.number,
       PropTypes.shape({
-        value: PropTypes.string,
-        text: PropTypes.string
+        value: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number
+        ]),
+        label: PropTypes.string
       })
     ])
   ),
