@@ -77,7 +77,7 @@ export default class MyDialogForm extends DialogForm {
   // You don't need to overload it if 2 buttons is what your DialogForm needs to have.
   getActions() {
     return [
-      <FlatButton label={closeLabel} onTouchTap={onRequestClose} />,
+      <FlatButton label={closeLabel} onTouchTap={this.props.onRequestClose} />,
       <FlatButton label={saveLabel} primary onTouchTap={() => this.save()} />
     ];
   }
