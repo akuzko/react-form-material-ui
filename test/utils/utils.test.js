@@ -1,11 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import expect, { spyOn } from 'expect';
-import DialogForm from '~/src/components/DialogForm';
+import Form from 'react-form-base';
+import { Dialog } from '~/src';
 import FlatButton from 'material-ui/FlatButton';
 
-describe('<DialogForm />', function() {
-  class TestForm extends DialogForm {
+describe('Dialog', function() {
+  class TestForm extends Dialog(Form) {
     $render() {
       return <div>content</div>;
     }
@@ -31,16 +32,8 @@ describe('<DialogForm />', function() {
     expect(actions[1].props.label).toEqual('Save');
   });
 
-  it('triggers validation on save', function() {
-    const wrapper = shallow(<TestForm attrs={{}} />);
-    const instance = wrapper.instance();
-    const spy = spyOn(instance, 'ifValid');
-    instance.save();
-    expect(spy).toHaveBeenCalled();
-  });
-
   it('allows to overload title and actions', function() {
-    class TestForm extends DialogForm {
+    class TestForm extends Dialog(Form) {
       getTitle() { return 'My Title'; }
       getActions() {
         return [<FlatButton label="Close Me" onTouchTap={this.props.onRequestClose} />];

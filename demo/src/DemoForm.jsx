@@ -56,9 +56,9 @@ export default class DemoForm extends Form {
                 title="DemoDialogForm.jsx"
                 code={`
                   import React from 'react';
-                  import { DialogForm, TextField } from 'react-form-material-ui';
+                  import Form, { Dialog, TextField } from 'react-form-material-ui';
 
-                  export default class DemoDialogForm extends DialogForm {
+                  export default class DemoDialogForm extends Dialog(Form) {
                     // NOTE: this static validation rules bellow are best to be defined
                     // in a very base Form class in your application, so your other
                     // forms could share and reuse them.
@@ -107,7 +107,6 @@ export default class DemoForm extends Form {
                           open={this.state.open}
                           onRequestClose={() => this.setState({ open: false })}
                           onRequestSave={() => this.setState({ open: false })}
-                          validateOnChange
                         />
                         <RaisedButton label="Open Dialog Form" onTouchTap={() => this.setState({ open: true })} />
                         {/* other components */}

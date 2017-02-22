@@ -42,7 +42,7 @@ describe('<RadioButtonGroup />', function() {
     });
 
     it('accepts array of objects as options in props', function() {
-      const wrapper = shallow(<RadioButtonGroup name="foo" options={[{ value: 'foo', text: 'Foo' }, { value: 'bar', text: 'Bar' }]} />);
+      const wrapper = shallow(<RadioButtonGroup name="foo" options={[{ value: 'foo', label: 'Foo' }, { value: 'bar', label: 'Bar' }]} />);
       expect(wrapper.containsMatchingElement(<RadioButton value="foo" label="Foo" />)).toBe(true);
       expect(wrapper.containsMatchingElement(<RadioButton value="bar" label="Bar" />)).toBe(true);
     });

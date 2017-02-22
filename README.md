@@ -62,10 +62,10 @@ export default class MyForm extends Form {
 ### DialogForm Example
 
 ```js
-import { DialogForm, TextField } from 'react-form-material-ui';
+import Form, { Dialog, TextField } from 'react-form-material-ui';
 import FlatButton from 'material-ui/FlatButton';
 
-export default class MyDialogForm extends DialogForm {
+export default class MyDialogForm extends Dialog(Form) {
   // title may be passed in props, or can be rendered dynamically (based on
   // form's attrs, for example) via getTitle method:
   getTitle() {
@@ -92,6 +92,24 @@ export default class MyDialogForm extends DialogForm {
       <div><TextField {...$('lastName')} floatingLabelText="Last Name" /></div>
     </div>
   }
+}
+```
+
+#### `Dialog` function
+
+Note that in example above `MyDialogForm` is extended from a class generated
+by a `Dialog(Form)` function call. The reason of such implementation is that
+you most likely will have base form class in your application, where all your
+validations and custom behavior will be defined. And to be able to reuse all
+this functionality, any dialog form has to be inherited from this base form of
+yours. Thus, in real-life situations you probably will have something like that:
+
+```rb
+import { Dialog } from 'react-form-material-ui';
+import Form from 'your-base-form';
+
+export default class ItemForm extends Dialog(Form) {
+  // form definitions...
 }
 ```
 
