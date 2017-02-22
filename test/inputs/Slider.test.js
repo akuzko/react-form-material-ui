@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import expect, { createSpy } from 'expect';
-import Slider from '~/src/components/inputs/Slider';
+import Slider from '~/src/inputs/Slider';
 import MaterialSlider from 'material-ui/Slider';
 
 describe('<Slider />', function() {

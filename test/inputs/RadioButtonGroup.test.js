@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import expect, { createSpy } from 'expect';
-import RadioButtonGroup from '~/src/components/inputs/RadioButtonGroup';
+import RadioButtonGroup from '~/src/inputs/RadioButtonGroup';
 import { RadioButton, RadioButtonGroup as MaterialRadioButtonGroup } from 'material-ui/RadioButton';
 
 describe('<RadioButtonGroup />', function() {

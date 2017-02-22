@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import expect, { createSpy } from 'expect';
-import SelectField from '~/src/components/inputs/SelectField';
+import SelectField from '~/src/inputs/SelectField';
 import MaterialSelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 

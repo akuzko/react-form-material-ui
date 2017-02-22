@@ -1,3 +1,4 @@
 export default from 'react-form-base';
-export Dialog from './utils/Dialog';
-export * from './components';
+export Dialog from './Dialog';
+export DialogForm from './DialogForm';
+export * from './inputs';

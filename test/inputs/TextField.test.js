@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import expect, { createSpy } from 'expect';
-import TextField from '~/src/components/inputs/TextField';
+import TextField from '~/src/inputs/TextField';
 import MaterialTextField from 'material-ui/TextField';
 
 describe('<TextField />', function() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import expect, { createSpy } from 'expect';
-import Toggle from '~/src/components/inputs/Toggle';
+import Toggle from '~/src/inputs/Toggle';
 import MaterialToggle from 'material-ui/Toggle';
 
 describe('<Toggle />', function() {

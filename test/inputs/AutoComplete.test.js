@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import expect, { createSpy } from 'expect';
-import AutoComplete from '~/src/components/inputs/AutoComplete';
+import AutoComplete from '~/src/inputs/AutoComplete';
 
 describe('<AutoComplete />', function() {
   it('passes value as searchText', function() {

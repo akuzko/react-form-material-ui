@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import expect, { createSpy } from 'expect';
-import DatePicker from '~/src/components/inputs/DatePicker';
+import DatePicker from '~/src/inputs/DatePicker';
 import MaterialDatePicker from 'material-ui/DatePicker';
 
 describe('<DatePicker />', function() {

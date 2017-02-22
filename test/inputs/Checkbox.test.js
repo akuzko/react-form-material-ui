@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import expect, { createSpy } from 'expect';
-import Checkbox from '~/src/components/inputs/Checkbox';
+import Checkbox from '~/src/inputs/Checkbox';
 import MaterialCheckbox from 'material-ui/Checkbox';
 
 describe('<Checkbox />', function() {
