@@ -97,14 +97,14 @@ export default class MyDialogForm extends Dialog(Form) {
 
 #### `Dialog` function
 
-Note that in example above `MyDialogForm` is extended from a class generated
+Note that in the example above `MyDialogForm` is extended from a class generated
 by a `Dialog(Form)` function call. The reason of such implementation is that
 you most likely will have base form class in your application, where all your
 validations and custom behavior will be defined. And to be able to reuse all
 this functionality, any dialog form has to be inherited from this base form of
 yours. Thus, in real-life situations you probably will have something like that:
 
-```rb
+```js
 import { Dialog } from 'react-form-material-ui';
 import Form from 'your-base-form';
 
@@ -113,18 +113,20 @@ export default class ItemForm extends Dialog(Form) {
 }
 ```
 
-### Component Props
+**NOTE:** the full signature of `Dialog` function is following:
 
-All **input** components (i.e. not `DialogForm`) receive **value**, **onChange**,
-**error** and **name** properties from `react-form-base` API (this props generated
-via form's `$` method).
+`function Dialog(Form, { Component = MaterialDialog } = {})`
 
-Bellow are the specs for other properties that components work with.
+where `MaterialDialog` stands for `material-ui`'s `Dialog` component. This means
+that in special cases you can use your own dialog containers to render form's body.
 
-#### `DialogForm`
+## Component Props
 
-`DialogForm` component renders it's content within `material-ui`'s `Dialog` component.
-When extending `DialogForm` class, you have 2 extra methods at your disposal:
+### Dialog Form
+
+`Dialog` form component renders it's content within `material-ui`'s `Dialog`
+component (by default). In addition to `react-form-base`'s Form API methods
+there are 2 additional methods available for `Dialog` forms:
 
 - `getTitle()`: overload it to set form's dialog title on rendering, if you don't
 want to pass it in props.
@@ -132,8 +134,6 @@ want to pass it in props.
 - `getActions()`: overload it if you want your dialog form to have something
 different from 'Cancel'-'Save' actions. Or you can pass `actions` in props
 without overloading this method.
-
-##### Props
 
 <table>
   <tbody>
@@ -165,6 +165,14 @@ without overloading this method.
     </tr>
   </tbody>
 </table>
+
+
+### Input Components
+
+All input components receive **value**, **onChange**, **error** and **name**
+properties from `react-form-base` API (this props generated via form's `$` method).
+
+Bellow are the specs for other properties that components work with.
 
 #### `TextField`
 
