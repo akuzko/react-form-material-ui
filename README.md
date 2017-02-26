@@ -3,6 +3,9 @@ material-ui Inputs for React Form Base
 
 [material-ui](http://www.material-ui.com/) input bindings for [react-form-base](https://github.com/akuzko/react-form-base).
 
+[![build status](https://img.shields.io/travis/akuzko/react-form-material-ui/master.svg?style=flat-square)](https://travis-ci.org/akuzko/react-form-material-ui)
+[![npm version](https://img.shields.io/npm/v/react-form-material-ui.svg?style=flat-square)](https://www.npmjs.com/package/react-form-material-ui)
+
 ## Installation
 
 ```
@@ -12,8 +15,9 @@ npm install --save react-form-material-ui
 ## Usage
 
 For a more detailed information on core functionality of `react-form-base`, take a
-look at [it's demo](https://akuzko.github.io/react-form-base/). To see a sample
-usage of this package components, you may want to look at [small demo](https://akuzko.github.io/react-form-material-ui/).
+look at [react-form-base demo](https://akuzko.github.io/react-form-base/). To see
+a sample usage of this package components, you may want to look at
+[react-form-material-ui components demo](https://akuzko.github.io/react-form-material-ui/).
 
 ### Example
 
@@ -262,6 +266,19 @@ This component is a simple wrapper around `material-ui`'s `TextField` component.
       <td>Can be used to render options manually. Overrides <code>options</code> prop.</td>
     </tr>
     <tr>
+      <td>includeBlank</td>
+      <td><code>PropTypes.oneOf([
+  'floatingLabelText',
+  'hintText'
+])</code></td>
+      <td>
+        When this property is set and input has non-empty value, additional option will be
+        rendered within the input. It will have a blank value and text that corresponds
+        to the value of prop itself. This behavior can be used to "drop" the value of
+        input after some option has been selected.
+      </td>
+    </tr>
+    <tr>
       <td><code>...rest</code></td>
       <td></td>
       <td>the rest of props are delegated to the internal <code>SelectField</code> component.</td>
@@ -308,10 +325,12 @@ and appropriate <code>onUpdateInput</code> prop is generated to match form's
   PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string,
+    PropTypes.bool,
     PropTypes.shape({
       value: PropTypes.oneOfType([
         PropTypes.string,
-        PropTypes.number
+        PropTypes.number,
+        PropTypes.bool
       ]),
       label: PropTypes.string
     })

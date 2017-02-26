@@ -7,7 +7,7 @@
     "build": "babel src --out-dir lib",
     "clear": "rimraf lib",
     "rebuild": "npm run clear && npm run build",
-    "lint": "./node_modules/.bin/eslint src test demo/src --ext .js --ext .jsx",
+    "lint": "./node_modules/.bin/eslint src test --ext .js --ext .jsx",
     "test": "mocha --compilers js:babel-register --recursive --require ./test/setup.js",
     "test:watch": "npm test -- --watch"
   },
@@ -44,7 +44,7 @@
     "eslint-plugin-react": "^6.9.0",
     "expect": "^1.20.2",
     "jsdom": "^9.10.0",
-    "material-ui": "^0.16.6",
+    "material-ui": "^0.16.0 || ^0.17.0",
     "mocha": "^3.2.0",
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",

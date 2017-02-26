@@ -41,6 +41,18 @@ describe('<RadioButtonGroup />', function() {
       expect(wrapper.containsMatchingElement(<RadioButton value="bar" label="bar" />)).toBe(true);
     });
 
+    it('accepts array of numbers as options in props', function() {
+      const wrapper = shallow(<RadioButtonGroup name="foo" options={[1, 2]} />);
+      expect(wrapper.containsMatchingElement(<RadioButton value={1} label="1" />)).toBe(true);
+      expect(wrapper.containsMatchingElement(<RadioButton value={2} label="2" />)).toBe(true);
+    });
+
+    it('accepts array of booleans as options in props', function() {
+      const wrapper = shallow(<RadioButtonGroup name="foo" options={[true, false]} />);
+      expect(wrapper.containsMatchingElement(<RadioButton value={true} label="true" />)).toBe(true);
+      expect(wrapper.containsMatchingElement(<RadioButton value={false} label="false" />)).toBe(true);
+    });
+
     it('accepts array of objects as options in props', function() {
       const wrapper = shallow(<RadioButtonGroup name="foo" options={[{ value: 'foo', label: 'Foo' }, { value: 'bar', label: 'Bar' }]} />);
       expect(wrapper.containsMatchingElement(<RadioButton value="foo" label="Foo" />)).toBe(true);

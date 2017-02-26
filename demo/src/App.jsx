@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import DemoForm from './DemoForm';
-import { bindState } from 'react-form-base';
+import { bindState } from '../../src';
 
 export default class App extends Component {
   state = {

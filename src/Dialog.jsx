@@ -21,6 +21,14 @@ export default function Dialog(Form, { Component = MaterialDialog } = {}) {
       open: false
     };
 
+    componentWillReceiveProps(nextProps) {
+      if (nextProps.open && !this.props.open) {
+        this._nextErrors = {};
+      }
+
+      super.componentWillReceiveProps(...arguments);
+    }
+
     getTitle() {
       return this.props.title;
     }
@@ -45,5 +53,5 @@ export default function Dialog(Form, { Component = MaterialDialog } = {}) {
         </Component>
       );
     }
-  }
+  };
 }

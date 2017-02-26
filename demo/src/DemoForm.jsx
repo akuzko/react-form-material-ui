@@ -69,7 +69,7 @@ export default class DemoForm extends Form {
 
                       email: function(value) {
                         // very primitive email check. not to be used in production
-                        if (value && !/^[\w\d.]+@[\w\d]+.[\w\d]{2,}$/.test(value)) {
+                        if (value && !/^[\\w\\d.]+@[\\w\\d]+.[\\w\\d]{2,}$/.test(value)) {
                           return 'should be email';
                         }
                       }
@@ -109,7 +109,7 @@ export default class DemoForm extends Form {
                           onRequestSave={() => this.setState({ open: false })}
                         />
                         <RaisedButton label="Open Dialog Form" onTouchTap={() => this.setState({ open: true })} />
-                        {/* other components */}
+                        {/* rest of form components */}
                       </div>
                     );
                   }

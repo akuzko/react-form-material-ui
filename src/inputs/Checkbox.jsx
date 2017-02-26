@@ -9,7 +9,7 @@ export default function Checkbox(props) {
     <div className={wrapperClassName}>
       <MaterialCheckbox
         checked={checked}
-        onCheck={(e, value) => onChange(value, e)}
+        onCheck={(e, value) => onChange(Checkbox.reversedInputValue ? !value : value, e)}
         {...rest}
       />
       {error &&

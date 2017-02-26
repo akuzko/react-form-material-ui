@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import expect, { spyOn } from 'expect';
+import expect from 'expect';
 import Form from 'react-form-base';
 import { Dialog } from '~/src';
 import FlatButton from 'material-ui/FlatButton';
@@ -15,6 +15,13 @@ describe('Dialog', function() {
   it('uses $render method to render content', function() {
     const wrapper = shallow(<TestForm attrs={{}} />);
     expect(wrapper.containsMatchingElement(<div>content</div>)).toBe(true);
+  });
+
+  it('clears errors when opened', function() {
+    const wrapper = shallow(<TestForm attrs={{}} open={false} />);
+    wrapper.setState({ errors: { foo: 'invalid' } });
+    wrapper.setProps({ open: true });
+    expect(wrapper.state('errors')).toEqual({});
   });
 
   it('accepts title prop and passes it to inner Dialog', function() {

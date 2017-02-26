@@ -31,6 +31,12 @@ describe('<SelectField />', function() {
       expect(wrapper.containsMatchingElement(<MenuItem value="bar" primaryText="bar" />)).toBe(true);
     });
 
+    it('accepts array of numbers as options in props', function() {
+      const wrapper = shallow(<SelectField options={[1, 2]} />);
+      expect(wrapper.containsMatchingElement(<MenuItem value={1} primaryText="1" />)).toBe(true);
+      expect(wrapper.containsMatchingElement(<MenuItem value={2} primaryText="2" />)).toBe(true);
+    });
+
     it('accepts array of objects as options in props', function() {
       const wrapper = shallow(<SelectField options={[{ value: 'foo', text: 'Foo' }, { value: 'bar', text: 'Bar' }]} />);
       expect(wrapper.containsMatchingElement(<MenuItem value="foo" primaryText="Foo" />)).toBe(true);
@@ -40,6 +46,13 @@ describe('<SelectField />', function() {
     it('accepts children as options in props', function() {
       const wrapper = shallow(<SelectField><MenuItem value="foo" primaryText="Foo" /></SelectField>);
       expect(wrapper.containsMatchingElement(<MenuItem value="foo" primaryText="Foo" />)).toBe(true);
+    });
+
+    describe('includeBlank property', function() {
+      const wrapper = shallow(
+        <SelectField value="foo" options={['foo', 'bar']} floatingLabelText="Value" includeBlank="floatingLabelText" />
+      );
+      expect(wrapper.containsMatchingElement(<MenuItem value="" primaryText="Value" />)).toBe(true);
     });
   });
 });
