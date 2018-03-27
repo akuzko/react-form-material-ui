@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import MaterialToggle from 'material-ui/Toggle';
 
 export default function Toggle(props) {
