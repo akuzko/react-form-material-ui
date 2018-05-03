@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import MaterialCheckbox from 'material-ui/Checkbox';
 
 export default function Checkbox(props) {

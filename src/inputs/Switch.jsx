@@ -1,13 +1,14 @@
-import React, { PropTypes } from 'react';
-import MaterialToggle from 'material-ui/Toggle';
+import React from 'react';
+import PropTypes from 'prop-types';
+import MaterialSwitch from 'material-ui/Switch';
 
-export default function Toggle(props) {
+export default function Switch(props) {
   const { value, error, onChange, wrapperClassname, errorClassName, ...rest } = props;
   const toggled = Boolean(value);
 
   return (
     <div className={wrapperClassname}>
-      <MaterialToggle
+      <MaterialSwitch
         toggled={toggled}
         onToggle={(e, value) => onChange(value, e)}
         {...rest}
@@ -19,7 +20,7 @@ export default function Toggle(props) {
   );
 }
 
-Toggle.propTypes = {
+Switch.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   error: PropTypes.string,
   onChange: PropTypes.func,
@@ -27,6 +28,6 @@ Toggle.propTypes = {
   errorClassName: PropTypes.string
 };
 
-Toggle.defaultProps = {
+Switch.defaultProps = {
   errorClassName: 'error'
 };
